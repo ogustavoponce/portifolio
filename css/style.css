@@ -4,11 +4,11 @@
 
 :root {
     /* Paleta de Cores (Exemplo: Sóbria com um toque de cor) */
-    --color-background: #0a0a0a; /* Quase preto */
-    --color-surface: #1a1a1a;   /* Um pouco mais claro para cards */
-    --color-primary: #f0c400;   /* Amarelo/Dourado (impacto) */
-    --color-text: #f1f1f1;      /* Texto principal (branco suave) */
-    --color-text-secondary: #a0a0a0; /* Texto secundário */
+    --color-background: #0a0a0a;
+    --color-surface: #1a1a1a;
+    --color-primary: #007bff;   /* Azul vibrante - ou #1e90ff (dodgerblue) ou #2196f3 (material blue) */
+    --color-text: #f1f1f1;
+    --color-text-secondary: #a0a0a0;
     
     /* Tipografia */
     --font-main: 'Inter', sans-serif;
