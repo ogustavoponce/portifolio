@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Gustavo Ponce</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/SEU-CODIGO-FONT-AWESOME.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo"><strong>Gustavo Ponce</strong></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html#curta" class="nav-link">O Curta</a></li>
+                <li class="nav-item"><a href="index.html#videos" class="nav-link">Vídeos</a></li>
+                <li class="nav-item"><a href="index.html#design" class="nav-link">Design</a></li>
+                <li class="nav-item"><a href="index.html#sites" class="nav-link">Sites</a></li>
+                <li class="nav-item"><a href="contato.html" class="nav-link cta-button active">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2>Vamos criar algo incrível juntos?</h2>
+                        <p>Envie sua ideia, projeto ou apenas diga "oi". Responderei o mais breve possível.</p>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@gustavoponce.com.br</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-instagram"></i>
+                            <span>@ogustavoponce</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-youtube"></i>
+                            <span>@ogustavoponce</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <form action="httpsBasic://formspree.io/f/SEU-ID-FORM" method="POST">
+                            <div class="form-group">
+                                <label for="name">Seu nome</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Seu e-mail</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Sua mensagem</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Gustavo Ponce</h3>
+                <p>Transformando ideias em realidade digital.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Vamos conversar?</h3>
+                <p>Estou disponível para novos projetos.</p>
+                <a href="mailto:contato@gustavoponce.com.br" class="footer-email">contato@gustavoponce.com.br</a>
+            </div>
+            <div class="footer-col">
+                <h3>Siga-me</h3>
+                <div class="social-links">
+                    <a href="https://instagram.com/ogustavoponce" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@ogustavoponce" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Gustavo Ponce. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
