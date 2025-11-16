@@ -151,7 +151,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     text-align: center;
     padding: 0 2rem;
     
-    /* Imagem de fundo local */
+    /* CAMINHO CORRIGIDO */
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -215,8 +215,8 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     justify-content: center;
     text-align: center;
     
-    /* Imagem de fundo local do seu curta */
-    background-image: url('/assets/images/curta-preview.jpg');
+    /* CAMINHO CORRIGIDO */
+    background-image: url('../assets/images/curta-preview.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efeito Parallax */
