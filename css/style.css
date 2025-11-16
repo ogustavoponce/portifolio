@@ -72,13 +72,11 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     top: 0;
     left: 0;
     z-index: 100;
-    /* COMEÇA TRANSPARENTE */
     background-color: transparent;
-    border-bottom: 1px solid transparent; /* Borda transparente */
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transição suave */
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* CLASSE ADICIONADA VIA JS QUANDO O UTILIZADOR ROLA */
 .header.scrolled {
     background-color: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(10px);
@@ -146,15 +144,29 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     text-align: center;
     padding: 0 2rem;
     
-    /* Link direto da internet (Unsplash) */
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
 }
 
-.hero-content {
+/* NOVO: Animação do conteúdo do Hero no load da página */
+.hero-content-animated {
     max-width: 800px;
+    /* Começa invisível */
+    opacity: 0;
+    transform: translateY(20px);
+    /* Define a animação: nome, duração, tipo, atraso, e "forwards" (mantém o estado final) */
+    animation: fadeInHero 1s ease-out 0.5s forwards;
 }
+
+/* Define o @keyframe */
+@keyframes fadeInHero {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .hero h1 {
     color: var(--color-text);
@@ -176,13 +188,12 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     font-weight: 700;
     font-size: 1rem;
     transition: all 0.3s ease;
-    box-shadow: none; /* Estado inicial */
+    box-shadow: none;
 }
 .btn-primary:hover {
     background-color: #fff;
     color: #000;
     transform: translateY(-3px);
-    /* UPGRADE "GLOW" */
     box-shadow: 0 5px 20px rgba(0, 123, 255, 0.4);
 }
 
@@ -195,12 +206,11 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     font-weight: 700;
     font-size: 1rem;
     transition: all 0.3s ease;
-    box-shadow: none; /* Estado inicial */
+    box-shadow: none;
 }
 .btn-secondary:hover {
     background-color: var(--color-text);
     color: var(--color-background);
-    /* UPGRADE "GLOW" */
     box-shadow: 0 5px 20px rgba(241, 241, 241, 0.3);
 }
 
@@ -215,8 +225,6 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     align-items: center;
     justify-content: center;
     text-align: center;
-    
-    /* CAMINHO CORRETO (CSS sobe 1, desce para assets/images) */
     background-image: url('../assets/images/curta-preview.jpg');
     background-size: cover;
     background-position: center;
@@ -295,7 +303,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 
 .portfolio-item {
     position: relative;
-    overflow: hidden; /* Essencial para o efeito */
+    overflow: hidden;
     border-radius: 8px;
     background-color: var(--color-surface);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -305,11 +313,9 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* UPGRADE: Transição mais longa e suave */
     transition: transform 0.6s ease-in-out;
 }
 
-/* UPGRADE: Efeito de zoom + rotação */
 .portfolio-item:hover img {
     transform: scale(1.1) rotate(1.5deg);
 }
@@ -331,19 +337,16 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     transform: translateY(0);
 }
 
-/* UPGRADE: Texto que desliza de baixo */
 .item-overlay h3,
 .item-overlay a {
     opacity: 0;
-    transform: translateY(15px); /* Começa 15px abaixo */
+    transform: translateY(15px);
     transition: all 0.4s ease-out;
 }
 
-/* Transição do H3 atrasa um pouco */
 .item-overlay h3 {
     transition-delay: 0.1s;
 }
-/* Transição do link atrasa mais */
 .item-overlay a {
     transition-delay: 0.2s;
 }
@@ -351,7 +354,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 .portfolio-item:hover .item-overlay h3,
 .portfolio-item:hover .item-overlay a {
     opacity: 1;
-    transform: translateY(0); /* Sobe para a posição 0 */
+    transform: translateY(0);
 }
 
 .item-overlay h3 {
@@ -364,20 +367,9 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 }
 
 /* ================== 6. PÁGINA DE CONTATO ================== */
-
-.contact-section {
-    padding: 8rem 0 6rem;
-    min-height: 80vh;
-}
-
-.contact-wrapper {
-    display: flex;
-    gap: 3rem;
-    background-color: var(--color-surface);
-    padding: 3rem;
-    border-radius: 8px;
-}
-
+/* (Sem alterações) */
+.contact-section { padding: 8rem 0 6rem; min-height: 80vh; }
+.contact-wrapper { display: flex; gap: 3rem; background-color: var(--color-surface); padding: 3rem; border-radius: 8px; }
 .contact-info { flex: 1; }
 .contact-info h2 { color: #fff; }
 .info-item { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; color: var(--color-text-secondary); }
@@ -385,7 +377,6 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 .contact-form { flex: 1.2; }
 .form-group { margin-bottom: 1.5rem; }
 .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--color-text-secondary); }
-
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -397,14 +388,12 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     font-family: var(--font-main);
     font-size: 1rem;
 }
-
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
 }
-
 .form-group textarea { resize: vertical; }
 
 /* ================== 7. FOOTER (Rodapé) ================== */
@@ -414,7 +403,6 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     padding: 4rem 0 0;
     border-top: 1px solid #222;
 }
-
 .footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; max-width: var(--container-width); margin: 0 auto; padding: 0 2rem; }
 .footer-col { flex: 1; min-width: 250px; }
 .footer-col h3 { color: #fff; margin-bottom: 1rem; }
@@ -426,13 +414,12 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 .footer-bottom { text-align: center; padding: 2rem 0; margin-top: 3rem; border-top: 1px solid #222; color: var(--color-text-secondary); font-size: 0.85rem; }
 
 /* ================== 8. RESPONSIVO (Mobile) ================== */
-
+/* (Sem alterações) */
 @media (max-width: 900px) {
     .contact-wrapper {
         flex-direction: column;
     }
 }
-
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
@@ -463,4 +450,41 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     .cta-button { width: 80%; margin: 0 auto; }
     .footer-container { flex-direction: column; text-align: center; }
     .social-links { justify-content: center; }
+}
+
+
+/* ================== 9. NOVO: ANIMAÇÕES DE SCROLL ================== */
+
+/* O estado INICIAL dos elementos (antes de aparecerem) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* O estado FINAL (quando o JS adicionar esta classe) */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Atraso para os itens do portfólio (efeito "stagger") */
+.portfolio-item.animate-on-scroll:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.portfolio-item.animate-on-scroll:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.portfolio-item.animate-on-scroll:nth-child(3) {
+    transition-delay: 0.3s;
+}
+/* Atraso para as colunas do footer */
+.footer-col.animate-on-scroll:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.footer-col.animate-on-scroll:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.footer-col.animate-on-scroll:nth-child(3) {
+    transition-delay: 0.3s;
 }
