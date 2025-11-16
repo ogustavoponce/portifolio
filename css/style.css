@@ -1,14 +1,12 @@
 /* ================== 1. RESET BÁSICO E VARIÁVEIS ================== */
 
-/* Import da fonte (já está no HTML) */
-
 :root {
-    /* Paleta de Cores (Exemplo: Sóbria com um toque de cor) */
-    --color-background: #0a0a0a;
-    --color-surface: #1a1a1a;
-    --color-primary: #007bff;   /* Azul vibrante - ou #1e90ff (dodgerblue) ou #2196f3 (material blue) */
-    --color-text: #f1f1f1;
-    --color-text-secondary: #a0a0a0;
+    /* Paleta de Cores (Azul) */
+    --color-background: #0a0a0a; /* Quase preto */
+    --color-surface: #1a1a1a;   /* Um pouco mais claro para cards */
+    --color-primary: #007bff;   /* Azul vibrante */
+    --color-text: #f1f1f1;      /* Texto principal (branco suave) */
+    --color-text-secondary: #a0a0a0; /* Texto secundário */
     
     /* Tipografia */
     --font-main: 'Inter', sans-serif;
@@ -153,7 +151,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     text-align: center;
     padding: 0 2rem;
     
-    /* Coloque sua imagem de fundo aqui */
+    /* Imagem de fundo local */
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -207,7 +205,6 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 
 
 /* ================== 4. DESTAQUE CURTA-METRAGEM ================== */
-/* Esta é a seção "Ultra Realista" e de impacto */
 
 .destaque-curta {
     position: relative;
@@ -218,7 +215,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     justify-content: center;
     text-align: center;
     
-    /* Imagem de fundo do seu curta */
+    /* Imagem de fundo local do seu curta */
     background-image: url('../assets/images/curta-preview.jpg');
     background-size: cover;
     background-position: center;
@@ -231,12 +228,11 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradiente para escurecer a imagem e o texto ficar legível */
     background: linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
 }
 
 .destaque-content {
-    position: relative; /* Fica acima do overlay */
+    position: relative; 
     z-index: 2;
     max-width: 700px;
     padding: 2rem;
@@ -271,10 +267,9 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 
 .portfolio-section {
     padding: 6rem 0;
-    background-color: var(--color-background); /* Fundo padrão */
+    background-color: var(--color-background); 
 }
 
-/* Alternar cor de fundo para ritmo */
 .portfolio-section:nth-child(odd) {
      background-color: var(--color-surface);
 }
@@ -293,7 +288,6 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 
 .portfolio-grid {
     display: grid;
-    /* Grid responsivo: 3 colunas em desktop, 2 em tablet, 1 em celular */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
@@ -410,7 +404,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(240, 196, 0, 0.3);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Sombra de foco azul */
 }
 
 .form-group textarea {
@@ -488,7 +482,6 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     h2 { font-size: 2rem; }
     .destaque-content h2 { font-size: 2.5rem; }
 
-    /* Estilos do Menu Hamburger */
     .hamburger {
         display: block;
     }
@@ -505,8 +498,8 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 
     .nav-menu {
         position: fixed;
-        left: -100%; /* Começa fora da tela */
-        top: 80px; /* Altura do header */
+        left: -100%;
+        top: 80px; 
         flex-direction: column;
         background-color: var(--color-background);
         width: 100%;
@@ -518,7 +511,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     }
 
     .nav-menu.active {
-        left: 0; /* Entra na tela */
+        left: 0;
     }
 
     .nav-item {
