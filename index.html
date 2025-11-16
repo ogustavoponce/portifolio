@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo Ponce - Diretor & Criador Digital</title>
-    
+    <title>Gustavo Ponce - Portfólio Criativo</title>
     <link rel="stylesheet" href="css/style.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/SEU-CODIGO-FONT-AWESOME.js" crossorigin="anonymous"></script> 
 </head>
 <body>
 
     <header class="header">
         <nav class="navbar">
-            <a href="#home" class="nav-logo">Gustavo Ponce</a>
+            <a href="index.html" class="nav-logo">
+                <strong>Gustavo Ponce</strong>
+            </a>
             
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#curta" class="nav-link">O Curta</a></li>
-                <li class="nav-item"><a href="#servicos" class="nav-link">Serviços</a></li>
+                <li class="nav-item"><a href="#videos" class="nav-link">Vídeos</a></li>
+                <li class="nav-item"><a href="#design" class="nav-link">Design</a></li>
+                <li class="nav-item"><a href="#sites" class="nav-link">Sites</a></li>
                 <li class="nav-item"><a href="contato.html" class="nav-link cta-button">Contato</a></li>
             </ul>
 
@@ -35,54 +36,88 @@
 
     <main>
 
-        <section class="hero-section" id="home">
+        <section class="hero" id="home">
             <div class="hero-content">
-                <h1 class="hero-title">GUSTAVO PONCE</h1>
-                <p class="hero-subtitle">Diretor, Videomaker & Desenvolvedor Web</p>
+                <h1>Criatividade que conta histórias.</h1>
+                <p>Designer Gráfico, Videomaker e Desenvolvedor Web focado em experiências digitais.</p>
+                <a href="#curta" class="btn-primary">Conheça meu último projeto</a>
             </div>
-            <a href="#curta" class="scroll-down-link" aria-label="Rolar para baixo">
-                <i class="fas fa-chevron-down"></i>
-            </a>
         </section>
 
         <section class="destaque-curta" id="curta">
-            <div class="section-bg" style="background-image: url('../assets/images/curta-preview.jpg');"></div>
-            <div class="section-overlay"></div>
-
-            <div class="section-content">
-                <span>Produção Destaque</span>
+            <div class="destaque-overlay"></div>
+            <div class="destaque-content">
+                <span>Produção Recente</span>
                 <h2>O TEMPO ENTRE NÓS</h2>
-                <p>Meu último curta-metragem. Uma obra sobre [escreva aqui o tema do seu curta].</p>
-                <a href="https://youtube.com/watch?v=_QAu8P5yA8Y" target="_blank" class="btn-primary">
+                <p>Meu último curta-metragem. Um projeto que dirigi, roteirizei e editei.</p>
+                <a href="https://youtube.com/watch?v=_QAu8P5yA8Y" target="_blank" class="btn-secondary">
                     <i class="fas fa-play"></i> Assistir Agora
                 </a>
             </div>
         </section>
 
-        <section class="services-section" id="servicos">
+        <section class="portfolio-section" id="videos">
             <div class="container">
-                <div class="section-header">
-                    <h2>Minhas Habilidades</h2>
-                    <p>Da concepção à execução, eu transformo ideias em realidade digital.</p>
-                </div>
+                <h2>Videomaker & Storymaker</h2>
+                <p class="section-subtitle">Mais do que vídeos, narrativas.</p>
                 
-                <div class="services-grid">
-                    <div class="service-card">
-                        <i class="fas fa-video"></i>
-                        <h3>Videomaker & Storymaker</h3>
-                        <p>Direção, roteiro, captação e edição de vídeos que contam histórias e emocionam.</p>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="assets/images/video-thumb1.jpg" alt="Preview do Vídeo 1">
+                        <div class="item-overlay">
+                            <h3>Título do Projeto</h3>
+                            <a href="#" target="_blank">Ver vídeo</a>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-palette"></i>
-                        <h3>Designer Gráfico</h3>
-                        <p>Criação de identidade visual, marcas, e peças gráficas que comunicam com clareza e impacto.</p>
+                    <div class="portfolio-item">
+                         <img src="assets/images/video-thumb2.jpg" alt="Preview do Vídeo 2">
+                        <div class="item-overlay">
+                            <h3>Título do Projeto</h3>
+                            <a href="#" target="_blank">Ver vídeo</a>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-code"></i>
-                        <h3>Desenvolvedor Web</h3>
-                        <p>Construção de sites e landing pages (como este) com HTML, CSS e JavaScript, focados em performance.</p>
                     </div>
-                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-section" id="design">
+            <div class="container">
+                <h2>Graphic Design</h2>
+                <p class="section-subtitle">Identidade visual, social media e mais.</p>
+                
+                <div class="portfolio-grid design-grid">
+                    <div class="portfolio-item">
+                         <img src="assets/images/design1.jpg" alt="Projeto de Design 1">
+                        <div class="item-overlay">
+                            <h3>Marca "Empresa X"</h3>
+                            <a href="#" target="_blank">Ver projeto</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                         <img src="assets/images/design2.jpg" alt="Projeto de Design 2">
+                        <div class="item-overlay">
+                            <h3>Social Media "Cliente Y"</h3>
+                            <a href="#" target="_blank">Ver projeto</a>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section class="portfolio-section" id="sites">
+            <div class="container">
+                <h2>Web Design & Dev</h2>
+                <p class="section-subtitle">Sites institucionais, landing pages e e-commerce.</p>
+                
+                <div class="portfolio-grid sites-grid">
+                    <div class="portfolio-item">
+                         <img src="assets/images/web1.jpg" alt="Preview do Site 1">
+                        <div class="item-overlay">
+                            <h3>Site "Empresa Z"</h3>
+                            <a href="#" target="_blank">Visitar site</a>
+                        </div>
+                    </div>
+                    </div>
             </div>
         </section>
 
@@ -91,8 +126,12 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
+                <h3>Gustavo Ponce</h3>
+                <p>Transformando ideias em realidade digital.</p>
+            </div>
+            <div class="footer-col">
                 <h3>Vamos conversar?</h3>
-                <p>Estou disponível para novos projetos e parcerias.</p>
+                <p>Estou disponível para novos projetos.</p>
                 <a href="mailto:contato@gustavoponce.com.br" class="footer-email">contato@gustavoponce.com.br</a>
             </div>
             <div class="footer-col">
