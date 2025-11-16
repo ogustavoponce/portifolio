@@ -216,7 +216,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     text-align: center;
     
     /* Imagem de fundo local do seu curta */
-    background-image: url('../assets/images/curta-preview.jpg');
+    background-image: url('/assets/curta-preview.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efeito Parallax */
