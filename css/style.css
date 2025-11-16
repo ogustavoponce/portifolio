@@ -357,22 +357,21 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     font-weight: 700;
 }
 
-/* ================== 6. NOVO: PÁGINA DE CONTATO ================== */
+/* ================== 6. PÁGINA DE CONTATO ================== */
 
 .contact-section {
-    padding: 10rem 0 6rem; /* Mais padding no topo para compensar o header */
+    padding: 10rem 0 6rem;
     min-height: 90vh;
 }
 
 .contact-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Grelha de 2 colunas */
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    /* Removemos a caixa (background, padding, border-radius) */
 }
 
 .contact-info h1 {
-    font-size: 3.5rem; /* Título maior */
+    font-size: 3.5rem;
     color: var(--color-text);
     margin-bottom: 1.5rem;
 }
@@ -418,8 +417,8 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 1rem; /* Mais padding */
-    background-color: var(--color-surface); /* Fundo mais claro */
+    padding: 1rem;
+    background-color: var(--color-surface);
     border: 1px solid #333;
     border-radius: 5px;
     color: var(--color-text);
@@ -436,88 +435,89 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 }
 .form-group textarea { resize: vertical; }
 
-/* ================== 7. NOVO: RODAPÉ ================== */
+/* ================== 7. RODAPÉ ANTIGO (3 COLUNAS) DE VOLTA ================== */
 
 .footer {
     background-color: var(--color-surface);
-    padding: 6rem 2rem 2rem; /* Mais espaço no topo */
-    text-align: center;
+    padding: 4rem 0 0;
     border-top: 1px solid #222;
 }
 
-.footer h3 {
-    font-size: 2.5rem;
-    font-weight: 900;
+.footer-container { 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 2rem; 
+    max-width: var(--container-width); 
+    margin: 0 auto; 
+    padding: 0 2rem; 
+}
+
+.footer-col { 
+    flex: 1; 
+    min-width: 250px; 
+}
+
+.footer-col h3 { 
+    color: #fff; 
+    margin-bottom: 1rem; 
+}
+
+.footer-col p { 
+    color: var(--color-text-secondary); 
+    font-size: 0.9rem; 
+}
+
+.footer-email { 
+    font-weight: 700; 
+    font-size: 1rem; 
+}
+.footer-email:hover {
     color: var(--color-text);
-    margin-bottom: 1rem;
 }
 
-.footer-email {
-    display: inline-block;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--color-primary);
-    margin-bottom: 2rem;
-    padding-bottom: 5px;
-    position: relative;
-    text-decoration: none;
-}
-/* Linha subtil por baixo do email */
-.footer-email::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-primary);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.4s ease;
-}
-.footer-email:hover::after {
-    transform: scaleX(1);
+.social-links { 
+    display: flex; 
+    gap: 1rem; 
+    margin-top: 1rem; 
+    /* Remove a justificação central do rodapé anterior */
+    justify-content: flex-start; 
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-.social-links a {
-    font-size: 1.8rem;
-    color: var(--color-text-secondary);
+.social-links a { 
+    font-size: 1.5rem; 
+    color: var(--color-text-secondary); 
     transition: all 0.3s ease;
 }
-.social-links a:hover {
-    color: var(--color-primary);
-    transform: translateY(-5px);
+
+.social-links a:hover { 
+    color: var(--color-primary); 
+    /* Remove o transform Y do rodapé anterior */
+    transform: translateY(0); 
 }
 
-.footer-bottom {
-    text-align: center;
-    padding: 2rem 0 0;
-    margin-top: 3rem;
-    border-top: 1px solid #333;
-    color: var(--color-text-secondary);
-    font-size: 0.85rem;
+.footer-bottom { 
+    text-align: center; 
+    padding: 2rem 0; 
+    margin-top: 3rem; 
+    border-top: 1px solid #222; 
+    color: var(--color-text-secondary); 
+    font-size: 0.85rem; 
 }
+
 
 /* ================== 8. RESPONSIVO (Mobile) ================== */
 
 @media (max-width: 900px) {
     .contact-wrapper {
-        grid-template-columns: 1fr; /* Coluna única em tablet */
+        grid-template-columns: 1fr;
     }
 }
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
     .destaque-content h2 { font-size: 2.5rem; }
-    .contact-info h1 { font-size: 2.5rem; } /* Ajuste de contacto */
-    .footer h3 { font-size: 2rem; } /* Ajuste de rodapé */
-    .footer-email { font-size: 1.2rem; }
+    .contact-info h1 { font-size: 2.5rem; }
 
     .hamburger { display: block; }
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
@@ -542,6 +542,15 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     .nav-item { width: 100%; }
     .nav-link { font-size: 1.2rem; color: var(--color-text); }
     .cta-button { width: 80%; margin: 0 auto; }
+    
+    /* Faz o rodapé de 3 colunas ficar responsivo */
+    .footer-container { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    .social-links { 
+        justify-content: center; 
+    }
 }
 
 
@@ -577,7 +586,13 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 .form-group.animate-on-scroll:nth-child(3) { transition-delay: 0.4s; }
 .btn-primary.animate-on-scroll { transition-delay: 0.5s; }
 
-/* Atrasos para os elementos do rodapé */
-.footer h3.animate-on-scroll { transition-delay: 0.1s; }
-.footer-email.animate-on-scroll { transition-delay: 0.2s; }
-.social-links.animate-on-scroll { transition-delay: 0.3s; }
+/* ATRASOS DO RODAPÉ (de volta ao modelo de 3 colunas) */
+.footer-col.animate-on-scroll:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.footer-col.animate-on-scroll:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.footer-col.animate-on-scroll:nth-child(3) {
+    transition-delay: 0.3s;
+}
