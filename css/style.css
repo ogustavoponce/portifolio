@@ -2,11 +2,11 @@
 
 :root {
     /* Paleta de Cores (Azul) */
-    --color-background: #0a0a0a; /* Quase preto */
-    --color-surface: #1a1a1a;   /* Um pouco mais claro para cards */
-    --color-primary: #007bff;   /* Azul vibrante */
-    --color-text: #f1f1f1;      /* Texto principal (branco suave) */
-    --color-text-secondary: #a0a0a0; /* Texto secundário */
+    --color-background: #0a0a0a;
+    --color-surface: #1a1a1a;
+    --color-primary: #007bff;
+    --color-text: #f1f1f1;
+    --color-text-secondary: #a0a0a0;
     
     /* Tipografia */
     --font-main: 'Inter', sans-serif;
@@ -64,7 +64,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     padding: 0 2rem;
 }
 
-/* ================== 2. HEADER E NAVEGAÇÃO ================== */
+/* ================== 2. HEADER E NAVEGAÇÃO (COM UPGRADE) ================== */
 
 .header {
     width: 100%;
@@ -72,7 +72,15 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: rgba(10, 10, 10, 0.8); /* Fundo com transparência */
+    /* COMEÇA TRANSPARENTE */
+    background-color: transparent;
+    border-bottom: 1px solid transparent; /* Borda transparente */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transição suave */
+}
+
+/* CLASSE ADICIONADA VIA JS QUANDO O UTILIZADOR ROLA */
+.header.scrolled {
+    background-color: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -112,7 +120,6 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     color: var(--color-text);
 }
 
-/* Botão de CTA no menu */
 .cta-button {
     background-color: var(--color-primary);
     color: var(--color-background);
@@ -125,20 +132,8 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     color: #000;
 }
 
-/* Menu Hamburger (Mobile) */
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: var(--color-text);
-    transition: all 0.3s ease-in-out;
-}
+.hamburger { display: none; cursor: pointer; }
+.bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--color-text); transition: all 0.3s ease-in-out; }
 
 /* ================== 3. SEÇÃO HERO ================== */
 
@@ -172,7 +167,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     margin-bottom: 2rem;
 }
 
-/* Botões */
+/* ================== BOTÕES COM UPGRADE "GLOW" ================== */
 .btn-primary {
     background-color: var(--color-primary);
     color: var(--color-background);
@@ -181,11 +176,14 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     font-weight: 700;
     font-size: 1rem;
     transition: all 0.3s ease;
+    box-shadow: none; /* Estado inicial */
 }
 .btn-primary:hover {
     background-color: #fff;
     color: #000;
     transform: translateY(-3px);
+    /* UPGRADE "GLOW" */
+    box-shadow: 0 5px 20px rgba(0, 123, 255, 0.4);
 }
 
 .btn-secondary {
@@ -197,10 +195,13 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     font-weight: 700;
     font-size: 1rem;
     transition: all 0.3s ease;
+    box-shadow: none; /* Estado inicial */
 }
 .btn-secondary:hover {
     background-color: var(--color-text);
     color: var(--color-background);
+    /* UPGRADE "GLOW" */
+    box-shadow: 0 5px 20px rgba(241, 241, 241, 0.3);
 }
 
 
@@ -219,7 +220,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     background-image: url('../assets/images/curta-preview.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efeito Parallax */
+    background-attachment: fixed;
 }
 
 .destaque-overlay {
@@ -263,7 +264,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     margin-right: 0.5rem;
 }
 
-/* ================== 5. SEÇÕES DE PORTFÓLIO (Grid) ================== */
+/* ================== 5. PORTFÓLIO GRID (COM UPGRADE) ================== */
 
 .portfolio-section {
     padding: 6rem 0;
@@ -294,7 +295,7 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 
 .portfolio-item {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Essencial para o efeito */
     border-radius: 8px;
     background-color: var(--color-surface);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -304,11 +305,13 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    /* UPGRADE: Transição mais longa e suave */
+    transition: transform 0.6s ease-in-out;
 }
 
+/* UPGRADE: Efeito de zoom + rotação */
 .portfolio-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(1.5deg);
 }
 
 .item-overlay {
@@ -326,6 +329,29 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 .portfolio-item:hover .item-overlay {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* UPGRADE: Texto que desliza de baixo */
+.item-overlay h3,
+.item-overlay a {
+    opacity: 0;
+    transform: translateY(15px); /* Começa 15px abaixo */
+    transition: all 0.4s ease-out;
+}
+
+/* Transição do H3 atrasa um pouco */
+.item-overlay h3 {
+    transition-delay: 0.1s;
+}
+/* Transição do link atrasa mais */
+.item-overlay a {
+    transition-delay: 0.2s;
+}
+
+.portfolio-item:hover .item-overlay h3,
+.portfolio-item:hover .item-overlay a {
+    opacity: 1;
+    transform: translateY(0); /* Sobe para a posição 0 */
 }
 
 .item-overlay h3 {
@@ -352,41 +378,13 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     border-radius: 8px;
 }
 
-.contact-info {
-    flex: 1;
-}
-.contact-info h2 {
-    color: #fff;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    color: var(--color-text-secondary);
-}
-.info-item i {
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    width: 25px;
-    text-align: center;
-}
-
-.contact-form {
-    flex: 1.2;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    color: var(--color-text-secondary);
-}
+.contact-info { flex: 1; }
+.contact-info h2 { color: #fff; }
+.info-item { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; color: var(--color-text-secondary); }
+.info-item i { font-size: 1.2rem; color: var(--color-primary); width: 25px; text-align: center; }
+.contact-form { flex: 1.2; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--color-text-secondary); }
 
 .form-group input,
 .form-group textarea {
@@ -404,12 +402,10 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Sombra de foco azul */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
 }
 
-.form-group textarea {
-    resize: vertical;
-}
+.form-group textarea { resize: vertical; }
 
 /* ================== 7. FOOTER (Rodapé) ================== */
 
@@ -419,55 +415,15 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     border-top: 1px solid #222;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.footer-col {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-col h3 {
-    color: #fff;
-    margin-bottom: 1rem;
-}
-.footer-col p {
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
-}
-.footer-email {
-    font-weight: 700;
-    font-size: 1rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-.social-links a {
-    font-size: 1.5rem;
-    color: var(--color-text-secondary);
-}
-.social-links a:hover {
-    color: var(--color-primary);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-    border-top: 1px solid #222;
-    color: var(--color-text-secondary);
-    font-size: 0.85rem;
-}
+.footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; max-width: var(--container-width); margin: 0 auto; padding: 0 2rem; }
+.footer-col { flex: 1; min-width: 250px; }
+.footer-col h3 { color: #fff; margin-bottom: 1rem; }
+.footer-col p { color: var(--color-text-secondary); font-size: 0.9rem; }
+.footer-email { font-weight: 700; font-size: 1rem; }
+.social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+.social-links a { font-size: 1.5rem; color: var(--color-text-secondary); }
+.social-links a:hover { color: var(--color-primary); }
+.footer-bottom { text-align: center; padding: 2rem 0; margin-top: 3rem; border-top: 1px solid #222; color: var(--color-text-secondary); font-size: 0.85rem; }
 
 /* ================== 8. RESPONSIVO (Mobile) ================== */
 
@@ -482,19 +438,10 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     h2 { font-size: 2rem; }
     .destaque-content h2 { font-size: 2.5rem; }
 
-    .hamburger {
-        display: block;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
+    .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
     .nav-menu {
         position: fixed;
@@ -510,29 +457,10 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
         gap: 2rem;
     }
 
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-item {
-        width: 100%;
-    }
-    
-    .nav-link {
-        font-size: 1.2rem;
-        color: var(--color-text);
-    }
-    
-    .cta-button {
-        width: 80%;
-        margin: 0 auto;
-    }
-    
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .social-links {
-        justify-content: center;
-    }
+    .nav-menu.active { left: 0; }
+    .nav-item { width: 100%; }
+    .nav-link { font-size: 1.2rem; color: var(--color-text); }
+    .cta-button { width: 80%; margin: 0 auto; }
+    .footer-container { flex-direction: column; text-align: center; }
+    .social-links { justify-content: center; }
 }
