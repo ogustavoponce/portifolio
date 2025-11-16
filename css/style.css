@@ -357,6 +357,20 @@ p  { margin-bottom: 1rem; color: var(--color-text-secondary); }
     font-weight: 700;
 }
 
+/* NOVO ESTILO: Mensagem "Em Breve" */
+.coming-soon-message {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    padding: 3rem 2rem;
+    background-color: var(--color-surface);
+    border-radius: 8px;
+    border: 1px dashed #333;
+    margin-top: 4rem;
+}
+
+
 /* ================== 6. PÁGINA DE CONTATO ================== */
 
 .contact-section {
