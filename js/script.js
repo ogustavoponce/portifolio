@@ -3,14 +3,19 @@ const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () => {
+    // Alterna a classe 'active' no hamburger (para o 'X')
     hamburger.classList.toggle("active");
+    
+    // Alterna a classe 'active' no menu (para mostrar/esconder)
     navMenu.classList.toggle("active");
 });
 
+// Opcional: Fechar o menu ao clicar em um link
 const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach(link => {
     link.addEventListener("click", () => {
+        // Verifica se o menu está aberto (se tem a classe 'active')
         if (navMenu.classList.contains("active")) {
             hamburger.classList.remove("active");
             navMenu.classList.remove("active");
@@ -21,7 +26,9 @@ navLinks.forEach(link => {
 // --- CÓDIGO DO HEADER SCROLLED ---
 const header = document.querySelector(".header");
 
+// Função que adiciona/remove a classe 'scrolled'
 function handleScroll() {
+    // window.scrollY > 50 significa que o utilizador rolou 50px para baixo
     if (window.scrollY > 50) {
         header.classList.add("scrolled");
     } else {
@@ -29,23 +36,21 @@ function handleScroll() {
     }
 }
 
+// Adiciona o "ouvinte" de scroll
 window.addEventListener("scroll", handleScroll);
 
 
 // ==============================================================
-// --- NOVO CÓDIGO "ULTRA MEGA PROFISSIONAL" (Animação de Scroll) ---
+// --- CÓDIGO "ULTRA MEGA PROFISSIONAL" (Animação de Scroll) ---
 // ==============================================================
 
 // 1. Cria o "observador"
-// O "IntersectionObserver" é a API moderna do JS para isto
 const observer = new IntersectionObserver((entries) => {
-    // Passa por cada "entrada" (cada elemento que estamos a observar)
     entries.forEach((entry) => {
-        // Se o elemento ESTÁ visível na tela (isIntersecting)
         if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
         } 
-        // Opcional: Se quiser que a animação aconteça sempre, e não só uma vez:
+        // Opcional: Para a animação repetir sempre que rolar para cima/baixo
         // else {
         //     entry.target.classList.remove('is-visible');
         // }
@@ -55,7 +60,6 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 // 2. Diz ao observador quais elementos ele deve observar
-// Seleciona TODOS os elementos que marcámos com a classe ".animate-on-scroll"
 const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
 
 // 3. Manda o observador "observar" cada um deles
